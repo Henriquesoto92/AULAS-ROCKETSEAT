@@ -1,0 +1,30 @@
+<!--
+    <label>
+    
+    - Associar e identificar uma (ou mais) tag de entrada de dados
+    - acessibilidade
+    - você poderá cliacr para mudar o foco da entrada de dados
+
+    Atributos
+    - for
+        - para fazer a conexão entre este label e a tag de entrada de dados
+        - é feita via id do input
+        - só funciona com elementos específicos
+            - button, input (not gidden), meter, output, progress, select, textarea.
+-->
+
+<label>
+    nome completo:
+    <input type="text">
+</label>
+<!--esse se tu clicar no nome, vai pra digitação-->
+<br>
+
+<label>nome completo:</label>
+<input type="text">
+<!--esse se tu clicar no nome, não vai pra digitação-->
+<br>
+
+<label for="nome">nome completo:</label>
+<input id="nome" type="text">
+<!--esse se tu clicar no nome, vai pra digitação-->
