@@ -1,0 +1,37 @@
+<!--
+    <input> atributos comuns
+
+    - autocomplete (vai se auto completar, conforme já havia sido digitado anteriormente)
+    - autofocus (serve para ir direto ao local, porque se precisar apertar enter ele vai ser o primeiro)
+    - disable (desabilita o campo - usado )
+    - readonly (é tipo disable, mas é diferente)
+    - Value (serve para já deixar um texto pre-definido)
+    - form (cria formulário)
+    - name (serve para resgatar a informação no back-end)
+    - required (quase todos) (trasnforma o campo em obrigatorio)
+    - placeholder (password, search, tel, text, url)()
+-->
+
+<input type="text" autocomplete="email">
+<br>
+<br>
+<input type="type" autofocus>
+<br>
+<br>
+<input type="text" value="qualquer coisa escrita">
+<br>
+<br>
+<input type="text" value="desabilitado para digitar" disabled>
+<br>
+<br>
+<input type="text" value="tu pode apenas copiar" readonly>
+<br>
+<br>
+<form id="meu-form"></form>
+<input name="email" type="email" form="meu-form">
+<br>
+<br>
+<input type="type" required placeholder="campo obrigatorio">
+<br>
+<br>
+<input type="email" >
