@@ -14,7 +14,7 @@ representa um conjunto de coordenadas 2D
 ```
 ```css
 .box {
-  heigth: 200px;
+  height: 200px;
   width: 200px;
   background-image: url(http://source.unsplash.com/random);
   background-repeat: no-repeat;

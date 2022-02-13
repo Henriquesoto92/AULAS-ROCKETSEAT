@@ -10,7 +10,7 @@ body {
 }
 
 .box {
-  heigth: calc(100% - 40px);
+  height: calc(100% - 40px);
   width: 200px;
   background-image: url(http://source.unsplash.com/random);
   background-repeat: no-repeat;
