@@ -1,91 +1,30 @@
-// 1. declare uma variável de nome weight
-let weight;
-
-//  2. que tipo de dado é a variável aceima?
-//console.log(typeof weight)
-
 /*
-
-    3. Declare uma variável e atribua valores para cada um dos dados:
-        * name: string
-        * age: Numeber (integer)
-        * stars: number (float)
-        * isSubscrived: boolean
-
+    manipulando strings e numeros
 */
+    //transformar uma cadeia de caracteres em elementros de um array
 
-// let name = 'soto'
-// let age = 30
-// let stars = 4.8
-// let isSubscrived = true
+let techs = ["html", "css", "js"]
 
-/*
-    4. A variável student abaixo é de que tipo de dado?
+// adicionar um item no fim
+techs.push("nodejs")
 
-    4.1 Atribua a ela as mesmas propriedades e valores do exercicio 3
+// adicionar no começo
+techs.unshift("sql")
 
-    4.2 Mostre no console a segunte mensagem:
+// remover do fim
+//techs.pop()
 
-        <name> de idade <age> pega  <Weighy> kg.
+// remover do começo
+//techs.shift()
 
-        Atenção, substitua <name> <age> e <weight> pelos valores de cada propriedade do objeto
-        
-*/
+// pegar somente alguns elementos do array
+//console.log(techs.slice(1,1))
 
-let student = {
-    name: 'soto',
-    age: 30,
-    weight: 80.8,
-    isSubscrived: true,
-};
+// remover 1 ou mais items em qualquer posição do array
+//techs.splice(1,1)
 
-//console.log(`${student.name} de idade ${student.age} pesa ${student.weight} kg.`)
+// encontrar a posição de um elemento no array
+let index = techs.indexOf('css')
+techs.splice(index, 2)
 
-/*
-    5. Declare uma variavel do tipo array, de nome students e atribua a ela nenhum valor, ou seja, somente o array vazio
-*/
-
-let students =[
-
-]
-
-/*
-    6. Reatribua valor para a variável acima, colocando dentro dela o objeto student da questão 4. (não copiar e colar o object, mas usar o objeto criado e inserir ele no array)
-*/
-
-students = [
-    student
-]
-
-console.log(students)
-
-/*
-    7. Coloque no console o valor da posição zero do Array acima
-*/
-
-console.log(students[0])
-
-/*
-    8. Crie um novo student e coloque na posição 1 do array students
-*/
-
-let john = {
-    name: 'john',
-    age: 25,
-    weight: 74.8,
-    isSubscrived: true,
-};
-
-students [1]= john
-
-console.log(students)
-
-/*
-    9. Sem rodar o código responda qual é a resposta do código abaixo e porque? Após sua resposta, rode o código e veja se você acertou
-
-    console.log(a)
-    var a = 1
-*/
-
-console.log(a)
-    var a = 1
+console.log(techs)
