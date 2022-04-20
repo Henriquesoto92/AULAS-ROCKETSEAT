@@ -1,0 +1,18 @@
+{
+  "name": "npm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "learning",
+    "nodeJS"
+  ],
+  "author": "Henrique Soto",
+  "license": "MIT",
+  "dependencies": {
+    "cfonts": "^2.10.0"
+  }
+}
