@@ -8,15 +8,15 @@
 */
 
 
-function Person(name) {
-    this.name = name
-    this.walk = function() {
-        return this.name + " está andando"
-    }
+const sum = function (number1, number2) {
+    total = number1 + number2
+    return total
 }
 
-const soto = new Person("Soto")
-const joao = new Person("João")
-console.log(soto.walk())
-console.log(joao.walk())
+let number1 = 34
+let number2 = 25
+
+console.log(`o número 1 é ${number1}`)
+console.log(`o número 2 é ${number2}`)
+console.log(`a soma é ${sum(number1, number2)}`)
 
