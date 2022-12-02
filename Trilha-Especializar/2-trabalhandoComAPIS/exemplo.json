@@ -1,0 +1,10 @@
+{
+  "nome": "Henrique Soto",
+  "cidade": "São Paulo",
+  "telefone": 5199999999999,
+  "livros_favoritos": ["codigo limpo", "sherlock holmes"],
+  "hobbies": {
+    "semana": "lives",
+    "fim de semana": "ver filmes"
+  }
+}
