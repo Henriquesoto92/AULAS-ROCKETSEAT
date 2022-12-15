@@ -6,8 +6,9 @@ function getUsers() {
     .then((data) => (renderApiResult.textContent = JSON.stringify(data)))
     .catch((error) => console.error(error));
 }
-function getUser() {
-  fetch(`${url}/1`)
+
+function getUser(id) {
+  fetch(`${url}/${id}`)
     .then((response) => response.json())
     .then((data) => {
       userName.textContent = data.name;
@@ -27,16 +28,46 @@ function addUser(newUser) {
   })
     .then((response) => response.json())
     .then((data) => (alertAPI.textContent = data))
-    .catch();
+    .catch((error) => console.error(error));
+}
+
+function updateUser(updateUserOld, id) {
+  fetch(`${url}/${id}`, {
+    method: "PUT",
+    body: JSON.stringify(updateUserOld),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => (alertAPI.textContent = data))
+    .catch((error) => console.error(error));
 }
 
 const newUser = {
   name: "Gabriel farmacion",
-  avatar: "http://lorempixel.com/300/300",
+  avatar: "https://picsum.photos/200/300",
   city: "Rio de Janeiro",
 };
 
-addUser(newUser);
+const updateUserOld = {
+  name: "Henrique Soto",
+  avatar: "https://picsum.photos/200/300",
+  city: "guaiba",
+};
+
+function deleteUser(id) {
+  fetch(`${url}/${id}`, {
+    method: "DELETE",
+    headers: { "Content-type": "application/json; charset=UTF-8" },
+  })
+    .then((response) => response.json())
+    .then((data) => (alertAPI.textContent = data))
+    .catch((error) => console.error(error));
+}
 
 getUsers();
-getUser();
+getUser(1);
+deleteUser(5);
+// updateUser(updateUserOld, 1);
+// addUser(newUser);
