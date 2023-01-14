@@ -1,24 +1,71 @@
 import "./styles.css";
 
-import { Card } from "../../components/Card";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import Card from "../../components/Card";
 
-export function Home() {
+export default function Home() {
   const [studentName, setStudentName] = useState("");
+  const [students, setStudents] = useState([]);
+  const [user, setUser] = useState({ name: "", avatar: "" });
+
+  function handleAddStudent() {
+    const newStudent = {
+      name: studentName,
+      time: new Date().toLocaleDateString("pt-br", {
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+      }),
+    };
+    setStudents((prevState) => [...prevState, newStudent]);
+  }
+
+  useEffect(() => {
+    // fetch("https://api.github.com/users/henriquesoto92")
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     setUser({
+    //       name: data.name,
+    //       avatar: data.avatar_url,
+    //     });
+    //   });
+
+    async function fetchData() {
+      const response = await fetch("https://api.github.com/users/birobirobiro");
+      const data = await response.json();
+      console.log("DADOS =>", data);
+
+      setUser({
+        name: data.name,
+        avatar: data.avatar_url,
+      });
+    }
+
+    fetchData();
+  }, []);
 
   return (
     <div className="container">
-      <h1> Nome: {studentName}</h1>
+      <header>
+        <h1>Lista de Presença</h1>
+        <div>
+          <strong>{user.name}</strong>
+          <img src={user.avatar} alt="Foto de perfil" />
+        </div>
+      </header>
 
       <input
         type="text"
         placeholder="Digite o nome..."
         onChange={(e) => setStudentName(e.target.value)}
       />
-      <button type="button">Adicionar</button>
+      <button type="button" onClick={() => handleAddStudent()}>
+        Adicionar
+      </button>
 
-      <Card name="Henrique" time="10:55:55" />
-      <Card name="Maike" time="05:55:54" />
+      {students.map((student, index) => (
+        <Card key={index} name={student.name} time={student.time} />
+      ))}
     </div>
   );
 }
